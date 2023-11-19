@@ -17,12 +17,12 @@ base16_colors=(
 	base0E:Bright_Magenta
 	base0C:Bright_Cyan
 	base07:Bright_White
-	base09
-	base0F
-	base01
-	base02
-	base04
-	base06
+	base09:
+	base0F:
+	base01:
+	base02:
+	base04:
+	base06:
 )
 
 reset="\e[0m"
