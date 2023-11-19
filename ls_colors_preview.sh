@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[ -f "$1" ] && eval $(dircolors "$1")
+
 ls_colors=(${LS_COLORS//:/ })
 
 reset="\e[0m"
