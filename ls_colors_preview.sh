@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-ls_colors=(
-	${LS_COLORS//:/ }
-)
+ls_colors=(${LS_COLORS//:/ })
+
+reset="\e[0m"
 
 for i in ${!ls_colors[@]}; do
 	ext=${ls_colors[${i}]%%=*}
@@ -10,7 +10,6 @@ for i in ${!ls_colors[@]}; do
 	pad=$((12 - ${#ext}))
 
 	fg_color="\e[${color}m"
-	reset="\e[0m"
 
 	if [ 0 -ne ${i} ]; then
 		[ 0 -eq $((${i} % 8)) ] && printf "\n" || printf "\t"
@@ -21,3 +20,5 @@ for i in ${!ls_colors[@]}; do
 done
 
 [ 0 -ne ${#ls_colors[@]} ] && printf "\n"
+
+exit 0

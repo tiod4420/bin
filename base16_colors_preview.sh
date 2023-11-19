@@ -25,15 +25,18 @@ base16_colors=(
 	base06
 )
 
+reset="\e[0m"
+
 for i in ${!base16_colors[@]}; do
 	base16_name=${base16_colors[${i}]%%:*}
 	ansi_name=${base16_colors[${i}]##*:}
 
 	fg_color="\e[38;5;${i}m"
 	bg_color="\e[48;5;${i}m"
-	reset="\e[0m"
 
 	printf "${fg_color}color%02d %s %-15s${reset}" "$i" "$base16_name" "$ansi_name"
 	printf "|${bg_color}%-30s${reset}|"
 	printf "\n"
 done
+
+exit 0
