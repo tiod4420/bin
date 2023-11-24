@@ -6,6 +6,7 @@ if [ 1 -ne "$#" ]; then
 fi
 
 # Backup and delete extra files
+rsync -aPh --delete ${HOME}/Backups   "$1"
 rsync -aPh --delete ${HOME}/Documents "$1"
 rsync -aPh --delete ${HOME}/Dropbox   "$1"
 rsync -aPh --delete ${HOME}/Music     "$1"
