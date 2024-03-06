@@ -12,11 +12,11 @@ pacman -Qge | grep '^gnome-extra ' | cut -d' ' -f2 > gnome-extra.txt
 # Generate texlive-most.txt
 pacman -Qge | grep '^texlive ' | cut -d' ' -f2 > texlive-most.txt
 
-# Generate yay.txt
-pacman -Qqm > yay.txt
+# Generate paru.txt
+pacman -Qqm > paru.txt
 
 # Generate pacman.txt
-pacman -Qqe | grep -v -x -f gnome.txt -f gnome-extra.txt -f texlive-most.txt -f yay.txt > pacman.txt
+pacman -Qqe | grep -v -x -f gnome.txt -f gnome-extra.txt -f texlive-most.txt -f paru.txt > pacman.txt
 
 # Generate all.txt
 pacman -Qq > all.txt
